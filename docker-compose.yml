@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  # App services
+  asynqmon-dev:
+    container_name: asynqmon-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    working_dir: /asynqmon-dev
+    volumes:
+      - ./:/asynqmon-dev
+    command: tail -f /dev/null
